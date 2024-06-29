@@ -7,3 +7,5 @@ print(a, b, c)
 
 adder = pybind_add.AddClass(5, 2)
 print(adder.add())
+
+print(pybind_add.ext_add(a, b))

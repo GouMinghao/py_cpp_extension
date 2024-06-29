@@ -5,7 +5,11 @@ from pybind11.setup_helpers import Pybind11Extension
 ext_modules = [
     Pybind11Extension(
         "pybind_add",
-        sorted(glob("src/*.cpp")),  # Sort source files for reproducibility
+        sources=["src/bind11_add.cpp"],  # Sort source files for reproducibility
+        include_dirs=["ext_module/include"],
+        library_dirs=["ext_module/build"],
+        libraries=["ext_adder"],
+        runtime_library_dirs=["/home/gmh/Desktop/cpp_python/pybind11/ext_module/build"],
     ),
 ]
 
